@@ -61,8 +61,18 @@ To interact with the API, you can use tools like [Postman](https://www.postman.c
 
 This project uses JWT for user authentication. You will need to obtain a JWT token to access the admin-protected routes.
 
+#### Register admin
+Send a `POST` request to `/auth/register` with a username, password and is_admin to register the admin:
+```json
+{
+  "username": "admin",
+  "password": "admin_password",
+  "is_admin":true
+}
+```
+
 #### Get Token
-Send a `POST` request to `/login` with a valid username and password to receive a JWT token:
+Send a `POST` request to `/auth/login` with a valid username and password to receive a JWT token:
 ```json
 {
   "username": "admin",
