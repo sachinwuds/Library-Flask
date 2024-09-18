@@ -1,0 +1,61 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+
+# Environment Variables
+.env
+
+# Virtual Environment
+venv/
+env/
+.venv/
+.venv/
+
+# SQLite database
+*.sqlite3
+*.db
+
+# JWT Tokens (or other secret keys)
+*.pem
+
+# VSCode settings
+.vscode/
+
+# Pytest cache
+.cache/
+
+# Logs
+*.log
+
+# Mac OS specific files
+.DS_Store
+
+# Jupyter Notebooks Checkpoints (if using Jupyter)
+.ipynb_checkpoints/
+
+# Coverage reports
+htmlcov/
+coverage.xml
+*.cover
+*.coverage
+.cache/
+
+# Unit test / pytest output
+nosetests.xml
+test_*.xml
+junit-*.xml
+test-reports/
+
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pylint reports
+pylint.log
+
+# Images
+*.png
