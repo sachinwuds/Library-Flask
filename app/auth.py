@@ -14,7 +14,8 @@ def register():
 
     if User.query.filter_by(username=username).first():
         return jsonify({"msg": "Username already exists"}), 400
-
+    if is_admin == 'true':
+        is_admin = True
     new_user = User(username=username, password=password, is_admin=is_admin)
     db.session.add(new_user)
     db.session.commit()

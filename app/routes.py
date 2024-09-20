@@ -28,7 +28,6 @@ def list_books():
 @books_bp.route('/', methods=['POST'])
 @jwt_required()
 def create_book():
-    print(os.path.join(UPLOAD_FOLDER, "filename"))
     # return {"path":os.path}
     current_user = get_jwt_identity()
     if not current_user['is_admin']:
@@ -117,3 +116,12 @@ def delete_book(book_id):
     db.session.commit()
     
     return jsonify({"msg": "Book deleted"}), 200
+
+
+@books_bp.route('/<int:book_id>', methods=['GET'])
+def get_book(book_id):
+    book = Book.query.get(book_id)
+    if not book:
+        return jsonify({"msg": "Book not found"}), 404
+    
+    return jsonify(book.to_dict()), 200
